@@ -3,5 +3,7 @@
   <texts>
     <text name="Questions" value="Questions" />
     <text name="Users" value="Users" />
+    <text name="TestMenuItem" value="TestMenuItem" />
+    <text name="UserAdd" value="Add User" />
   </texts>
 </localizationDictionary>

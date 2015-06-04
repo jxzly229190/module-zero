@@ -543,6 +543,7 @@
     <Content Include="js\main.js" />
     <Content Include="Localization\AbpWeb\AbpWeb.tr.xml" />
     <Content Include="Localization\AbpWeb\AbpWeb.xml" />
+    <Content Include="Localization\ModuleZeroSampleProject\ModuleZeroSampleProject.zh.xml" />
     <Content Include="Localization\ModuleZeroSampleProject\ModuleZeroSampleProject.tr.xml" />
     <Content Include="Localization\ModuleZeroSampleProject\ModuleZeroSampleProject.xml" />
     <Content Include="App\Main\main.less" />
@@ -766,6 +767,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\Account\LoginViewModel.cs" />
+    <Compile Include="Models\Account\RegisterViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Views\ModuleZeroSampleProjectWebViewPageBase.cs" />
   </ItemGroup>

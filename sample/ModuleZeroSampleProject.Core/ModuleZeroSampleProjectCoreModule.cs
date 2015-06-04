@@ -10,6 +10,8 @@ namespace ModuleZeroSampleProject
         public override void Initialize()
         {
             IocManager.RegisterAssemblyByConvention(Assembly.GetExecutingAssembly());
+            
+            //Configuration.MultiTenancy.IsEnabled = false;
         }
     }
 }

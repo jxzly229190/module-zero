@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<localizationDictionary culture="zh">
+  <texts>
+    <text name="Questions" value="问题" />
+    <text name="Users" value="用户" />
+    <text name="TestMenuItem" value="测试按钮" />
+    <text name="UserAdd" value="添加" />
+  </texts>
+</localizationDictionary>

@@ -8,6 +8,7 @@ using Microsoft.AspNet.Identity;
 using Microsoft.Owin.Security;
 using ModuleZeroSampleProject.Users;
 using ModuleZeroSampleProject.Web.Models.Account;
+using System;
 
 namespace ModuleZeroSampleProject.Web.Controllers
 {
@@ -26,6 +27,18 @@ namespace ModuleZeroSampleProject.Web.Controllers
         public AccountController(UserManager userManager)
         {
             _userManager = userManager;
+        }
+
+        public async Task<JsonResult> Register(string returnUrl = "")
+        {
+            await _userManager.CreateAsync(new User() { Name = "EM", Surname = "root user", UserName = "root", Password = "111111", EmailAddress = "jx-zly@live.cn", IsEmailConfirmed = false, IsDeleted = false, IsActive = true, CreationTime = DateTime.Now }, "111111");
+
+            if (string.IsNullOrWhiteSpace(returnUrl))
+            {
+                returnUrl = Request.ApplicationPath;
+            }
+
+            return Json(new MvcAjaxResponse { TargetUrl = returnUrl }, JsonRequestBehavior.AllowGet);
         }
 
         public ActionResult Login(string returnUrl = "")
