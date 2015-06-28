@@ -91,7 +91,7 @@ namespace ModuleZeroSampleProject.Web.Controllers
 
             if (string.IsNullOrWhiteSpace(returnUrl))
             {
-                returnUrl = Request.ApplicationPath;
+                returnUrl = "/Admin"; //Request.ApplicationPath;
             }
 
             return Json(new MvcAjaxResponse { TargetUrl = returnUrl });
