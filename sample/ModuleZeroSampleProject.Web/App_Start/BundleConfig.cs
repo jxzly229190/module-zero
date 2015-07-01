@@ -182,6 +182,67 @@ namespace ModuleZeroSampleProject.Web
             bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
                         "~/Scripts/jquery-{version}.js"));
 
+            bundles.Add(new ScriptBundle("~/adminLTE/js").
+                Include(
+                "~/Scripts/bootstrap.js", 
+                "~/Scripts/jquery-{version}.js",
+                "~/App/Main/AdminLTE/plugins/iCheck/icheck.min.js"));
+
+            bundles.Add(new ScriptBundle("~/adminLTE/js").
+                Include("~/Scripts/bootstrap.js",
+                "~/Scripts/jquery-{version}.js",
+                "~/App/Main/AdminLTE/plugins/iCheck/icheck.min.js"));
+
+            bundles.Add(new ScriptBundle("~/login/js").
+                Include("~/Abp/Framework/scripts/libs/abp.jquery.js", "~/abp/framework/scripts/abp.js", "~/js/Account/login.js"));
+
+            bundles.Add(
+                new StyleBundle("~/adminLTE/css")
+                    .Include("~/Content/bootstrap.min.css", 
+                    "~/App/Main/AdminLTE/dist/css/AdminLTE.min.css", 
+                    "~/App/Main/AdminLTE/plugins/iCheck/square/blue.css")
+                );
+
+            bundles.Add(
+                new StyleBundle("~/adminLTE/main/css")
+                    .Include("~/Content/bootstrap.min.css",
+                    "~/App/Main/AdminLTE/dist/css/AdminLTE.min.css",
+                    "~/App/Main/AdminLTE/plugins/iCheck/square/blue.css",
+                    "~/App/Main/AdminLTE/dist/css/skins/_all-skins.min.css",
+                    "~/App/Main/AdminLTE/iconfont/css/ionicons.min.css",
+                    "~/App/Main/AdminLTE/plugins/morris/morris.css",
+                    "~/App/Main/AdminLTE/plugins/jvectormap/jquery-jvectormap-1.2.2.css",
+                    "~/App/Main/AdminLTE/plugins/datepicker/datepicker3.css",
+                    "~/App/Main/AdminLTE/plugins/daterangepicker/daterangepicker-bs3.css",
+                    "~/App/Main/AdminLTE/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css"
+                    )
+                );
+
+            bundles.Add(
+                new ScriptBundle("~/adminLTE/main/js")
+                    .Include(
+                    "~/App/Main/AdminLTE/plugins/jQuery/jQuery-2.1.4.min.js",
+                    "~/App/Main/AdminLTE/plugins/jQuery/jquery-ui.min.js",
+                    "~/bower_components/angular/angular.min.js",
+                    "~/Scripts/bootstrap.min.js",
+                    "~/App/Main/AdminLTE/plugins/morris/morris.min.js",
+                    "~/App/Main/AdminLTE/plugins/sparkline/jquery.sparkline.min.js",
+                    "~/App/Main/AdminLTE/plugins/jvectormap/jquery-jvectormap-1.2.2.min.js",
+                    "~/App/Main/AdminLTE/plugins/jvectormap/jquery-jvectormap-world-mill-en.js",
+                    "~/App/Main/AdminLTE/plugins/knob/jquery.knob.js",
+                    "~/App/Main/AdminLTE/plugins/daterangepicker/daterangepicker.js",
+                    "~/App/Main/AdminLTE/plugins/datepicker/bootstrap-datepicker.js",
+                    "~/App/Main/AdminLTE/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js",
+                    "~/App/Main/AdminLTE/plugins/slimScroll/jquery.slimscroll.min.js",
+                    "~/App/Main/AdminLTE/plugins/fastclick/fastclick.min.js",
+                    "~/App/Main/AdminLTE/dist/js/app.min.js",
+                    "~/App/Main/AdminLTE/dist/js/pages/dashboard.js",
+                     "~/App/Main/AdminLTE/dist/js/demo.js",
+                     "~/Abp/Framework/scripts/libs/abp.jquery.js", 
+                     "~/abp/framework/scripts/abp.js", "~/js/Account/login.js"
+                    )
+                );
+
             #endregion
         }
     }

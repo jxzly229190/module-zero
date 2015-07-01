@@ -13,7 +13,7 @@ namespace ModuleZeroSampleProject.Web
     {
         public override void SetNavigation(INavigationProviderContext context)
         {
-            
+
             context.Manager.MainMenu
                 .AddItem(
                     new MenuItemDefinition(
@@ -29,17 +29,10 @@ namespace ModuleZeroSampleProject.Web
                         url: "#/users",
                         icon: "fa fa-users"
                         )
-                        .AddItem(new MenuItemDefinition(
-                        "Add",
-                        new LocalizableString("UserAdd", ModuleZeroSampleProjectConsts.LocalizationSourceName),
-                        url: "#/add",
-                        icon: "glyphicon glyphicon-plus-sign"
-                        ))
                 ).AddItem(new MenuItemDefinition("TestMenuItem",
                         new LocalizableString("TestMenuItem", ModuleZeroSampleProjectConsts.LocalizationSourceName),
                         url: "#/users",
-                        icon: "fa fa-users"))
-               ;
+                        icon: "fa fa-users"));
         }
     }
 }
