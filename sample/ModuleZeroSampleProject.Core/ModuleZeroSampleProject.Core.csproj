@@ -87,6 +87,8 @@
     <Compile Include="Authorization\Role.cs" />
     <Compile Include="Authorization\RoleManager.cs" />
     <Compile Include="Authorization\RoleStore.cs" />
+    <Compile Include="Navigation\Nav - 复制.cs" />
+    <Compile Include="Navigation\Nav.cs" />
     <Compile Include="Questions\Answer.cs" />
     <Compile Include="Questions\Question.cs" />
     <Compile Include="ModuleZeroSampleProjectConsts.cs" />

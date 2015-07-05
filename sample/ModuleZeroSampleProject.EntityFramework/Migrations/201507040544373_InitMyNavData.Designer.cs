@@ -7,13 +7,13 @@ namespace ModuleZeroSampleProject.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class InitCreate : IMigrationMetadata
+    public sealed partial class InitMyNavData : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(InitCreate));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(InitMyNavData));
         
         string IMigrationMetadata.Id
         {
-            get { return "201506040600144_InitCreate"; }
+            get { return "201507040544373_InitMyNavData"; }
         }
         
         string IMigrationMetadata.Source

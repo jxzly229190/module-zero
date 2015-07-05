@@ -5,6 +5,7 @@ using EntityFramework.DynamicFilters;
 using ModuleZeroSampleProject.Authorization;
 using ModuleZeroSampleProject.EntityFramework;
 using ModuleZeroSampleProject.MultiTenancy;
+using ModuleZeroSampleProject.Navigation;
 using ModuleZeroSampleProject.Questions;
 using ModuleZeroSampleProject.Users;
 
@@ -42,6 +43,18 @@ namespace ModuleZeroSampleProject.Migrations.Data
                         Name = "System",
                         Surname = "Administrator",
                         EmailAddress = "admin@aspnetboilerplate.com",
+                        IsEmailConfirmed = true,
+                        Password = "AM4OLBpptxBYmM79lGOX9egzZk3vIQU3d/gFCJzaBjAPXzYIK3tQ2N7X4fcrHtElTw==" //123qwe
+                    });
+
+                adminUserForTenancyOwner = context.Users.Add(
+                    new User
+                    {
+                        TenantId = null,
+                        UserName = "admin1",
+                        Name = "System1",
+                        Surname = "Administrator1",
+                        EmailAddress = "admin1@aspnetboilerplate.com",
                         IsEmailConfirmed = true,
                         Password = "AM4OLBpptxBYmM79lGOX9egzZk3vIQU3d/gFCJzaBjAPXzYIK3tQ2N7X4fcrHtElTw==" //123qwe
                     });
@@ -154,6 +167,7 @@ namespace ModuleZeroSampleProject.Migrations.Data
 
                 question2.CreatorUserId = emreUserForDefaultTenant.Id;
                 context.SaveChanges();
+
             }
         }
     }

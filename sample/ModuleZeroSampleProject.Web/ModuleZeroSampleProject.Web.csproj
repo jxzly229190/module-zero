@@ -2396,7 +2396,6 @@
     <Compile Include="Areas\Admin\Controllers\AccountController.cs" />
     <Compile Include="Areas\Admin\Controllers\DefaultController.cs" />
     <Compile Include="Areas\Admin\Controllers\HomeController.cs" />
-    <Compile Include="Areas\Admin\DefaultController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="ModuleZeroSampleProjectControllerBase.cs" />
     <Compile Include="Global.asax.cs">
