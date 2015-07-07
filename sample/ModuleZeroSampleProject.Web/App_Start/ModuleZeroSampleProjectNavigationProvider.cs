@@ -1,5 +1,6 @@
 ﻿using Abp.Application.Navigation;
 using Abp.Localization;
+using ModuleZeroSampleProject.Navigation;
 
 namespace ModuleZeroSampleProject.Web
 {
@@ -11,8 +12,16 @@ namespace ModuleZeroSampleProject.Web
     /// </summary>
     public class ModuleZeroSampleProjectNavigationProvider : NavigationProvider
     {
+        private INavigationAppService _navigationAppService;
+
+        public ModuleZeroSampleProjectNavigationProvider(INavigationAppService navigationAppService)
+        {
+            this._navigationAppService = navigationAppService;
+        }
+
         public override void SetNavigation(INavigationProviderContext context)
         {
+            var list = _navigationAppService.GetNavigations();
 
             context.Manager.MainMenu
                 .AddItem(
