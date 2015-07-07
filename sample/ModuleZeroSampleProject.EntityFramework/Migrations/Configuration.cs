@@ -19,8 +19,6 @@ namespace ModuleZeroSampleProject.Migrations
         protected override void Seed(ModuleZeroSampleProjectDbContext context)
         {
             new InitialDataBuilder().Build(context);
-
-            context.Navs.AddOrUpdate(new Nav() { Name = "question", Description = "Questions" }, new Nav() { Name = "answer", Description = "Answers" });
             //context.Menus.Add(new Menu() { Name = "answer", Description = "Answers" });
 
             //context.SaveChanges();

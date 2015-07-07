@@ -1,3 +1,4 @@
+using System.Data.Entity.Migrations;
 using System.Linq;
 using Abp.Authorization.Roles;
 using Abp.Authorization.Users;
@@ -168,6 +169,8 @@ namespace ModuleZeroSampleProject.Migrations.Data
                 question2.CreatorUserId = emreUserForDefaultTenant.Id;
                 context.SaveChanges();
 
+                context.Navs.AddOrUpdate(new Nav() { Name = "question", Description = "Questions" }, new Nav() { Name = "answer", Description = "Answers" });
+                context.SaveChanges();
             }
         }
     }

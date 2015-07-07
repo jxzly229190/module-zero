@@ -21,7 +21,7 @@ namespace ModuleZeroSampleProject.Navigation
 
         public ListResultOutput<NavigationDto> GetNavigations()
         {
-            var list = _navReposity.GetAllList();
+            var list = _navReposity.GetAll().ToList();
 
             return new ListResultOutput<NavigationDto>()
             {
