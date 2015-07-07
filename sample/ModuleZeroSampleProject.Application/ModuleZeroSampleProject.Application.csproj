@@ -117,6 +117,11 @@
   <ItemGroup>
     <Compile Include="Authorization\ModuleZeroSampleProjectAuthorizationProvider.cs" />
     <Compile Include="Configuration\MySettingProvider.cs" />
+    <Compile Include="Navigation\Dto\GetNavigationsInput.cs" />
+    <Compile Include="Navigation\Dto\GetNavigationsOutput.cs" />
+    <Compile Include="Navigation\Dto\NavigationDto.cs" />
+    <Compile Include="Navigation\INavigationService.cs" />
+    <Compile Include="Navigation\NavigationService.cs" />
     <Compile Include="Questions\Dto\CreateQuestionInput.cs" />
     <Compile Include="Questions\Dto\AnswerDto.cs" />
     <Compile Include="Questions\Dto\GetQuestionsInput.cs" />
