@@ -157,6 +157,10 @@
     <Compile Include="Migrations\201507040546183_InitMyNavsData.Designer.cs">
       <DependentUpon>201507040546183_InitMyNavsData.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201507100610400_InitialUpdate.cs" />
+    <Compile Include="Migrations\201507100610400_InitialUpdate.Designer.cs">
+      <DependentUpon>201507100610400_InitialUpdate.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Migrations\Data\InitialDataBuilder.cs" />
     <Compile Include="ModuleZeroSampleProjectDataModule.cs" />
@@ -209,6 +213,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201507040546183_InitMyNavsData.resx">
       <DependentUpon>201507040546183_InitMyNavsData.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201507100610400_InitialUpdate.resx">
+      <DependentUpon>201507100610400_InitialUpdate.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

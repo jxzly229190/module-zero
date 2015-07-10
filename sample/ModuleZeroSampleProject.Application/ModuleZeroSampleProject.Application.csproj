@@ -115,7 +115,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Authorization\Dto\GrantRoleInput.cs" />
+    <Compile Include="Authorization\Dto\GrantUserInput.cs" />
     <Compile Include="Authorization\ModuleZeroSampleProjectAuthorizationProvider.cs" />
+    <Compile Include="Authorization\PermissionAppService.cs" />
     <Compile Include="Configuration\MySettingProvider.cs" />
     <Compile Include="Navigation\Dto\GetNavigationsInput.cs" />
     <Compile Include="Navigation\Dto\GetNavigationsOutput.cs" />
