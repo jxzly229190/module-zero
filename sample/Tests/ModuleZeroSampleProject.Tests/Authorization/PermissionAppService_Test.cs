@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using ModuleZeroSampleProject.Users;
 using Shouldly;
 using Xunit;
 
@@ -16,9 +17,12 @@ namespace ModuleZeroSampleProject.Tests.Authorization
     {
         private readonly IPermissionAppService _permissionAppService;
 
+        private readonly UserManager _userManager;
+
         public PermissionAppService_Test()
         {
             _permissionAppService = LocalIocManager.Resolve<IPermissionAppService>();
+            _userManager = LocalIocManager.Resolve<UserManager>();
             //_rolePermission = LocalIocManager.Resolve<RolePermissionSetting>();
         }
 
@@ -36,6 +40,25 @@ namespace ModuleZeroSampleProject.Tests.Authorization
             });
 
             //this.UsingDbContext(context=>context)
+        }
+
+        [Fact]
+        public async Task Should_Grant_User_Permission()
+        {
+            await _permissionAppService.GrantUser(new GrantUserInput() {PermissionName = "CanCreateQuestions", UserId = 4});
+
+            //Assert.True(await _userManager.IsGrantedAsync(4, "CanCreateQuestions"));
+
+            this.UsingDbContext(context =>
+            {
+                var permissions = context.UserPermissions.Where(p => p.UserId == 4);
+
+                permissions.ShouldNotBe(null);
+
+                permissions.Count().ShouldBe(2);
+
+                permissions.FirstOrDefault(p => p.Name == "CanCreateQuestions").UserId.ShouldBe(1);
+            });
         }
     }
 }

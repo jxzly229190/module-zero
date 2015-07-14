@@ -1,4 +1,5 @@
-﻿using Abp.Application.Services;
+﻿using System.Data.Entity.Core;
+using Abp.Application.Services;
 using Abp.Authorization.Roles;
 using Abp.Domain.Repositories;
 using System;
@@ -6,6 +7,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Abp.MultiTenancy;
 using ModuleZeroSampleProject.Authorization.Dto;
 using ModuleZeroSampleProject.MultiTenancy;
 using ModuleZeroSampleProject.Users;
@@ -17,7 +19,7 @@ namespace ModuleZeroSampleProject.Authorization
     {
         void GrantRole(GrantRoleInput input);
 
-        void GrantUser(GrantUserInput input);
+        Task GrantUser(GrantUserInput input);
     }
 
     public class PermissionAppService : IPermissionAppService, IApplicationService
@@ -27,13 +29,17 @@ namespace ModuleZeroSampleProject.Authorization
 
         private readonly IRepository<Role,int> _roleRepository;
 
+        private readonly UserManager _userManager;
+
         private readonly IRepository<RolePermissionSetting,long> PermissionSetting;
-        public PermissionAppService(IRepository<RolePermissionSetting, long> permissionSetting, IRepository<Role, int> roleRepository)
+        public PermissionAppService(IRepository<RolePermissionSetting, long> permissionSetting, IRepository<Role, int> roleRepository,UserManager userManager)
         {
             //this._rolePermissionStore = rolePermissionStore;
             this._roleRepository = roleRepository;
 
             this.PermissionSetting = permissionSetting;
+
+            this._userManager = userManager;
         }
 
         public void GrantRole(GrantRoleInput input)
@@ -48,11 +54,21 @@ namespace ModuleZeroSampleProject.Authorization
             this.PermissionSetting.InsertOrUpdate(new RolePermissionSetting() { IsGranted = true, RoleId = input.RoleId, Name = input.PermissionName });
 
             //_rolePermissionStore.AddPermissionAsync(role, new PermissionGrantInfo(input.PermissionName, true));
+
+
         }
 
-        public void GrantUser(GrantUserInput input)
+        public async Task GrantUser(GrantUserInput input)
         {
-            throw new NotImplementedException();
+            var user = _userManager.Users.FirstOrDefault(u => u.Id == input.UserId);
+            
+            if (user == null)
+            {
+                throw new ObjectNotFoundException("user");
+            }
+
+            await _userManager.GrantPermissionAsync(user,
+                new Permission(input.PermissionName));
         }
     }
 }

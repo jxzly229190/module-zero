@@ -11,7 +11,7 @@ namespace ModuleZeroSampleProject.Authorization.Dto
     public class GrantUserInput:IInputDto
     {
         [Required]
-        public long PermissionId { get; set; }
+        public string PermissionName { get; set; }
 
         [Required]
         public int UserId { get; set; }

@@ -11,7 +11,7 @@ namespace ModuleZeroSampleProject
         {
             IocManager.RegisterAssemblyByConvention(Assembly.GetExecutingAssembly());
             
-            //Configuration.MultiTenancy.IsEnabled = false;
+            Configuration.MultiTenancy.IsEnabled = false;
         }
     }
 }
